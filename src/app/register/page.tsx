@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import Image from "next/image";
 
 function RegisterForm() {
   const searchParams = useSearchParams();
@@ -92,6 +93,16 @@ function RegisterForm() {
     <div className="min-h-screen bg-gradient-to-b from-blue-900 to-blue-700 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md">
         <div className="text-center mb-6">
+          <div className="logo-container mx-auto mb-3">
+            <Image
+              src="/perkeso-logo.png"
+              alt="Logo PERKESO"
+              width={70}
+              height={70}
+              className="logo-perkeso mx-auto"
+              priority
+            />
+          </div>
           <h1 className="text-xl font-bold text-gray-800">
             Pendaftaran Kehadiran
           </h1>

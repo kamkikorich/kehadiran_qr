@@ -24,3 +24,87 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Animasi Logo PERKESO */
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-20px);
+  }
+  50% {
+    transform: scale(1.1) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes logoPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(0, 102, 179, 0));
+  }
+  50% {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 20px rgba(0, 102, 179, 0.4));
+  }
+}
+
+@keyframes logoShine {
+  0% {
+    filter: brightness(1) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+  50% {
+    filter: brightness(1.1) drop-shadow(0 8px 25px rgba(0, 102, 179, 0.3));
+  }
+  100% {
+    filter: brightness(1) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.logo-perkeso {
+  animation: logoEntrance 0.8s ease-out forwards, 
+             logoPulse 3s ease-in-out 0.8s infinite;
+}
+
+.logo-perkeso:hover {
+  animation: logoShine 1.5s ease-in-out infinite, 
+             floatUpDown 2s ease-in-out infinite;
+}
+
+.logo-container {
+  position: relative;
+}
+
+.logo-container::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 10px;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.15) 0%, transparent 70%);
+  animation: shadowPulse 3s ease-in-out infinite;
+}
+
+@keyframes shadowPulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1);
+    opacity: 0.3;
+  }
+}

@@ -3,6 +3,7 @@
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 function SuccessContent() {
   const searchParams = useSearchParams();
@@ -11,9 +12,20 @@ function SuccessContent() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-600 to-green-800 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md text-center">
-        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <div className="logo-container mx-auto mb-4">
+          <Image
+            src="/perkeso-logo.png"
+            alt="Logo PERKESO"
+            width={80}
+            height={80}
+            className="logo-perkeso mx-auto"
+            priority
+          />
+        </div>
+
+        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <svg
-            className="w-10 h-10 text-green-600"
+            className="w-8 h-8 text-green-600"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
