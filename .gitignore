@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Google Service Account Key (JANGAN COMMIT!)
+perkeso-keningau-qr-*.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
