@@ -26,11 +26,11 @@ export async function appendAttendance(data: AttendanceData) {
   const values = [
     [
       timestamp,
-      data.namaProgram,
-      data.namaPeserta,
+      data.namaProgram.toUpperCase(),
+      data.namaPeserta.toUpperCase(),
       data.noIC,
-      data.noTelefon,
-      data.syarikat,
+      `'${data.noTelefon}`, // Prefix dengan ' supaya 0 tidak hilang dalam Excel
+      data.syarikat.toUpperCase(),
     ],
   ];
 

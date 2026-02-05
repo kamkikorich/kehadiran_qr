@@ -28,11 +28,11 @@ export async function POST(request: NextRequest) {
     }
 
     await appendAttendance({
-      namaProgram: data.namaProgram || "Tidak Dinyatakan",
+      namaProgram: data.namaProgram || "TIDAK DINYATAKAN",
       namaPeserta: data.namaPeserta.trim(),
       noIC: data.noIC,
       noTelefon: data.noTelefon,
-      syarikat: data.syarikat?.trim() || "Individu",
+      syarikat: data.syarikat?.trim() || "INDIVIDU",
     });
 
     return NextResponse.json({ success: true });
